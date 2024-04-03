@@ -1,0 +1,30 @@
+enum class Difficulty
+{
+    LOW, MEDIUM, HARD
+}
+data class Question<T>
+    (
+    val questionText : String,
+    val answer : T,
+    val difficulty : Difficulty
+)
+class Quiz{
+    val question1  = Question<String>("Whats your name","hammad",Difficulty.LOW)
+    val question2  = Question<Boolean>("Whats your name",true,Difficulty.MEDIUM)
+    val question3  = Question<Int>("Whats your name", 22 ,Difficulty.HARD)
+
+  companion object StudentProgress{
+        var total: Int = 10
+        var answered : Int = 5
+    }
+}
+
+
+fun main()
+{
+        val q1 = Quiz
+    println(question1)
+    println(question2)
+    println(question3)
+    println("${Quiz.answered} of ${Quiz.total}")
+}

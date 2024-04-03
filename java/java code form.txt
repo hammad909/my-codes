@@ -1,0 +1,61 @@
+import javax.swing.plaf.BorderUIResource;
+import javax.swing.plaf.SeparatorUI;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+class app extends WindowAdapter {
+    //frame code
+    Frame main_frame = new Frame();
+    //constructor
+    app() {
+        //main heading
+        Label welcome_heading = new Label("New USer Register");
+        welcome_heading.setBounds(50,50,100,30);
+       main_frame.add(welcome_heading);
+
+       //user name code
+        Label User = new Label("UserName");
+        User.setBounds(50,50,100,30);
+        main_frame.add(User);
+
+        //user name code textfield
+        TextField User_txt = new TextField();
+        User_txt.setBounds(150,50,150,30);
+        main_frame.add(User_txt);
+
+        //password
+        Label password = new Label("Password:");
+        password.setBounds(50,100,100,30);
+        main_frame.add(password);
+
+        //password code textfield
+        TextField password_txt = new TextField();
+        password_txt.setBounds(150,100,150,30);
+        main_frame.add(password_txt);
+
+        //submit button
+        Button submit_button = new Button("SUBMIT");
+        submit_button.setBounds(150, 150, 100, 30);
+        main_frame.add(submit_button);
+
+        // frame code
+        main_frame.setTitle("FORM");
+        main_frame.setSize(400,250);
+        main_frame.setVisible(true);
+        main_frame.setLayout(null);
+
+        //window closing tag
+        main_frame.addWindowListener(this);
+    }
+
+    public void windowClosing(WindowEvent e){
+        main_frame.dispose();
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+        app Obj = new app();
+    }
+}
